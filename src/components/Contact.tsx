@@ -1,51 +1,190 @@
-import { Mail, Github, Linkedin } from 'lucide-react'
+'use client'
+
+import { Mail, Github, Linkedin, Send, CheckCircle, MapPin, Phone } from 'lucide-react'
+import { useState } from 'react'
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState('')
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setError('')
+
+    if (!formData.name || !formData.email || !formData.message) {
+      setError('Please fill in all fields')
+      setIsSubmitting(false)
+      return
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(formData.email)) {
+      setError('Please enter a valid email address')
+      setIsSubmitting(false)
+      return
+    }
+
+    try {
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      console.log('Form submitted:', formData)
+      setIsSubmitted(true)
+      setFormData({ name: '', email: '', message: '' })
+      setTimeout(() => setIsSubmitted(false), 5000)
+    } catch (err) {
+      setError('Something went wrong. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="container-custom">
-        <h2 className="section-title">Contact</h2>
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-white p-8 rounded-lg shadow-md text-center space-y-6">
-            <p className="text-lg text-gray-700">
-              Feel free to reach out for collaborations or just a friendly chat!
-            </p>
-            
-            <div className="flex flex-col md:flex-row justify-center gap-6">
-              <a
-                href="mailto:abisha@example.com"
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                <Mail size={20} />
-                Email
-              </a>
-              
-              <a
-                href="https://www.linkedin.com/in/b-abisha/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors"
-              >
-                <Linkedin size={20} />
-                LinkedIn
-              </a>
-              
-              <a
-                href="https://github.com/Abisha5823"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors"
-              >
-                <Github size={20} />
-                GitHub
-              </a>
-            </div>
-            
-            <div className="pt-4 border-t border-gray-200">
-              <p className="text-gray-600">
-                <span className="font-semibold">Email:</span> abisha5823@gmail.com
+        <h2 className="section-title">Get In Touch</h2>
+        
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Contact Information */}
+          <div className="space-y-6">
+            <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-8 rounded-3xl shadow-xl text-white">
+              <h3 className="text-2xl font-bold mb-4">Let's Work Together</h3>
+              <p className="text-blue-100 mb-8">
+                Have a project in mind? I'd love to hear about it. Let's create something amazing together.
               </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-center gap-4 group cursor-pointer">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                    <Mail size={20} />
+                  </div>
+                  <div>
+                    <p className="text-sm text-blue-200">Email</p>
+                    <p className="font-medium">abisha5823@gmail.com</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-4 group cursor-pointer">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                    <MapPin size={20} />
+                  </div>
+                  <div>
+                    <p className="text-sm text-blue-200">Location</p>
+                    <p className="font-medium">Kayathar, Tamil Nadu, India</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex gap-3 mt-8 pt-8 border-t border-white/20">
+                <a href="https://github.com/Abisha5823" target="_blank" className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                  <Github size={18} />
+                </a>
+                <a href="https://www.linkedin.com/in/b-abisha" target="_blank" className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                  <Linkedin size={18} />
+                </a>
+              </div>
             </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="bg-white p-8 rounded-3xl shadow-xl">
+            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Send a Message
+            </h3>
+            
+            {isSubmitted && (
+              <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center gap-3 animate-fadeInUp">
+                <CheckCircle className="text-green-600" size={20} />
+                <p className="text-green-700">Message sent successfully!</p>
+              </div>
+            )}
+            
+            {error && (
+              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl">
+                <p className="text-red-700">{error}</p>
+              </div>
+            )}
+            
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                  placeholder="John Doe"
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                  placeholder="john@example.com"
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none"
+                  placeholder="Tell me about your project..."
+                />
+              </div>
+              
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1 disabled:opacity-50"
+              >
+                {isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send size={18} />
+                    Send Message
+                  </>
+                )}
+              </button>
+            </form>
           </div>
         </div>
       </div>
