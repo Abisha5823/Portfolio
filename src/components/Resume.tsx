@@ -18,7 +18,7 @@ const Resume = () => {
             Download Resume (PDF)
           </a>
           <p className="text-sm text-gray-500 mt-4">
-            * Add your resume PDF to the public folder
+            Note: The resume is in PDF format for easy viewing.
           </p>
         </div>
       </div>
