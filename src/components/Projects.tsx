@@ -31,7 +31,7 @@ const Projects = () => {
       description: 'AI-powered conversational assistant for psychology clinics to automate client onboarding and appointment booking through WhatsApp chat experience.',
       tech: ['React', 'JavaScript', 'AI Integration', 'WhatsApp API'],
       liveLink: '#',
-      githubLink: '#',
+      githubLink: 'https://github.com/Abisha5823/Whatsapp-booking-agent',
       type: 'AI Conversational Agent',
       features: [
         'Client information collection',
@@ -39,7 +39,15 @@ const Projects = () => {
         'Therapy service identification',
         'Lead generation & storage'
       ]
-    }
+    },
+    {
+  title: 'Notes App – Offline-First Draft Assistant',
+  description: 'React Native mobile application with offline storage, auto-save every 2 seconds, real-time search, and persistent local data management without internet connection.',
+  tech: ['React Native', 'Expo', 'AsyncStorage', 'React Navigation'],
+  liveLink: '#',
+  githubLink: 'https://github.com/Abisha5823/offline-notes-app',
+  type: 'Mobile App'
+}
   ]
 
   return (
