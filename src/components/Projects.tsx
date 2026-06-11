@@ -11,12 +11,20 @@ const Projects = () => {
       type: 'Business Website'
     },
     {
+  title: 'KI Bharath Solar Energies – Business Website',
+  description: 'Multi-page business website for solar energy company featuring product showcase, project gallery, customer enquiry system, and JSON-based content management.',
+  tech: ['HTML5', 'CSS3', 'JavaScript', 'Python', 'JSON', 'Vercel'],
+  liveLink: 'https://ki-bharat-solar.vercel.app',
+  githubLink: 'https://github.com/Abisha5823/ki-bharat-solar',
+  type: 'Business Website'
+},
+    {
       title: 'AI Business Chatbot',
       description: 'AI-powered customer support chatbot that handles inquiries, provides instant responses, and improves customer engagement.',
       tech: ['Next.js', 'AI APIs', 'OpenAI'],
-      liveLink: 'https://chatbot-client-five-nu.vercel.app/',
-      githubLink: 'https://github.com/Abisha5823/Chatbot-client',
-      type: 'AI Solutions'
+      liveLink: 'https://ki-bharat-solar.vercel.app/',
+      githubLink: 'https://github.com/Abisha5823/ki-bharat-solar',
+      type: 'Business Website with AI Chatbot'
     },
     {
       title: 'BizAI',
