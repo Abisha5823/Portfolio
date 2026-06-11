@@ -6,7 +6,7 @@ const Projects = () => {
       title: 'Anbu Enterprises',
       description: 'Professional business website with modern design and responsive layout. Built for a real client with full deployment.',
       tech: ['Next.js', 'React.js', 'Tailwind CSS'],
-      liveLink: '#',
+      liveLink: 'https://www.annbuenterprises.com/',
       githubLink: '#',
       type: 'Business Website'
     },
@@ -14,7 +14,7 @@ const Projects = () => {
       title: 'AI Business Chatbot',
       description: 'AI-powered customer support chatbot that handles inquiries, provides instant responses, and improves customer engagement.',
       tech: ['Next.js', 'AI APIs', 'OpenAI'],
-      liveLink: '#',
+      liveLink: 'https://chatbot-client-five-nu.vercel.app/',
       githubLink: '#',
       type: 'AI Solutions'
     },
