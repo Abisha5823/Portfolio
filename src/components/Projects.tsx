@@ -1,6 +1,6 @@
 'use client'
 
-import { ExternalLink, Github, Star, Code2 } from 'lucide-react'
+import { ExternalLink, Github, Code2 } from 'lucide-react'
 import { useState } from 'react'
 
 const Projects = () => {
@@ -27,11 +27,11 @@ const Projects = () => {
     },
     {
       title: 'Notes App – Offline-First Draft Assistant',
-  description: 'React Native mobile application with offline storage, auto-save every 2 seconds, real-time search, and persistent local data management without internet connection.',
-  tech: ['React Native', 'Expo', 'AsyncStorage', 'React Navigation'],
-  liveLink: '#',
-  githubLink: 'https://github.com/Abisha5823/offline-notes-app',
-  type: 'Mobile App',
+      description: 'React Native mobile application with offline storage, auto-save every 2 seconds, real-time search, and persistent local data management without internet connection.',
+      tech: ['React Native', 'Expo', 'AsyncStorage', 'React Navigation'],
+      liveLink: '#',
+      githubLink: 'https://github.com/Abisha5823/offline-notes-app',
+      type: 'Mobile App',
       gradient: 'from-purple-500 to-pink-600'
     },
     {
@@ -41,21 +41,15 @@ const Projects = () => {
       liveLink: '#',
       githubLink: 'https://github.com/Abisha5823/Whatsapp-booking-agent',
       type: 'AI Conversational Agent',
-      features: [
-        'Client information collection',
-        'Appointment preference gathering',
-        'Therapy service identification',
-        'Lead generation & storage'
-      ],
       gradient: 'from-orange-500 to-red-600'
     },
     {
       title: 'KI Bharath Solar Energies – Business Website',
-  description: 'Multi-page business website for solar energy company featuring product showcase, project gallery, customer enquiry system, and JSON-based content management.',
-  tech: ['HTML5', 'CSS3', 'JavaScript', 'Python', 'JSON', 'Vercel'],
-  liveLink: 'https://ki-bharat-solar.vercel.app',
-  githubLink: 'https://github.com/Abisha5823/ki-bharat-solar',
-  type: 'Business Website',
+      description: 'Multi-page business website for solar energy company featuring product showcase, project gallery, customer enquiry system, and JSON-based content management.',
+      tech: ['HTML5', 'CSS3', 'JavaScript', 'Python', 'JSON', 'Vercel'],
+      liveLink: 'https://ki-bharat-solar.vercel.app',
+      githubLink: 'https://github.com/Abisha5823/ki-bharat-solar',
+      type: 'Business Website',
       gradient: 'from-indigo-500 to-blue-600'
     },
     {
@@ -70,21 +64,21 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects" className="py-24 bg-gradient-to-b from-white to-gray-50">
+    <section id="projects" className="py-24 bg-gray-900">
       <div className="container-custom">
         <h2 className="section-title">Featured Projects</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
+              className="group relative bg-gray-800 rounded-2xl shadow-lg overflow-hidden card-hover"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               {/* Gradient Border Effect */}
               <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-xl`}></div>
               
-              <div className="relative bg-white rounded-2xl p-6 m-px">
+              <div className="relative bg-gray-800 rounded-2xl p-6 m-px">
                 {/* Type Badge */}
                 <div className="mb-4">
                   <span className={`inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r ${project.gradient} text-white text-xs rounded-full`}>
@@ -93,17 +87,17 @@ const Projects = () => {
                   </span>
                 </div>
                 
-                <h3 className="text-xl font-bold mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                <p className="text-gray-400 mb-4 text-sm leading-relaxed">
                   {project.description}
                 </p>
                 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, techIndex) => (
-                    <span key={techIndex} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+                    <span key={techIndex} className="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded-full">
                       {tech}
                     </span>
                   ))}
@@ -116,7 +110,7 @@ const Projects = () => {
                       href={project.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                      className="inline-flex items-center gap-1 text-sm text-blue-400 hover:text-blue-300 transition-colors"
                     >
                       <ExternalLink size={14} /> Live Demo
                     </a>
@@ -125,7 +119,7 @@ const Projects = () => {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                    className="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-gray-300 transition-colors"
                   >
                     <Github size={14} /> GitHub
                   </a>
@@ -133,7 +127,7 @@ const Projects = () => {
 
                 {/* Hover Indicator */}
                 {hoveredIndex === index && (
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
+                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
                 )}
               </div>
             </div>
