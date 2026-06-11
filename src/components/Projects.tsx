@@ -3,11 +3,11 @@ import { ExternalLink, Github } from 'lucide-react'
 const Projects = () => {
   const projects = [
     {
-      title: 'Anbu Enterprises',
+      title: 'Annbu Enterprises',
       description: 'Professional business website with modern design and responsive layout. Built for a real client with full deployment.',
       tech: ['Next.js', 'React.js', 'Tailwind CSS'],
       liveLink: 'https://www.annbuenterprises.com/',
-      githubLink: '#',
+      githubLink: 'https://github.com/Abisha5823/solar-business-website-client-project',
       type: 'Business Website'
     },
     {
@@ -15,7 +15,7 @@ const Projects = () => {
       description: 'AI-powered customer support chatbot that handles inquiries, provides instant responses, and improves customer engagement.',
       tech: ['Next.js', 'AI APIs', 'OpenAI'],
       liveLink: 'https://chatbot-client-five-nu.vercel.app/',
-      githubLink: '#',
+      githubLink: 'https://github.com/Abisha5823/Chatbot-client',
       type: 'AI Solutions'
     },
     {

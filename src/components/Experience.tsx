@@ -3,7 +3,7 @@ const Experience = () => {
     {
       title: 'Freelance Web Developer',
       company: 'Self-employed',
-      period: '2023 - Present',
+      period: '2025',
       responsibilities: [
         'Built responsive websites for businesses',
         'Developed AI chatbot solutions for clients',
@@ -14,7 +14,7 @@ const Experience = () => {
     {
       title: 'App Developer Intern',
       company: 'Hostwire, Chennai',
-      period: '2024',
+      period: '2025',
       responsibilities: [
         'Worked on Topsy client application development',
         'Implemented new features and enhancements',
