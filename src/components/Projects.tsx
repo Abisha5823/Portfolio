@@ -25,6 +25,20 @@ const Projects = () => {
       liveLink: '#',
       githubLink: '#',
       type: 'SaaS Platform'
+    },
+    {
+      title: 'WhatsApp Booking Agent',
+      description: 'AI-powered conversational assistant for psychology clinics to automate client onboarding and appointment booking through WhatsApp chat experience.',
+      tech: ['React', 'JavaScript', 'AI Integration', 'WhatsApp API'],
+      liveLink: '#',
+      githubLink: '#',
+      type: 'AI Conversational Agent',
+      features: [
+        'Client information collection',
+        'Appointment preference gathering',
+        'Therapy service identification',
+        'Lead generation & storage'
+      ]
     }
   ]
 
