@@ -1,6 +1,6 @@
 'use client'
 
-import { Briefcase, Calendar, MapPin, Award, TrendingUp, Users, Code, Smartphone } from 'lucide-react'
+import { Briefcase, Calendar, MapPin, Award, TrendingUp, Users, Code, Smartphone, Brain } from 'lucide-react'
 import { useState } from 'react'
 
 const Experience = () => {
@@ -24,9 +24,9 @@ const Experience = () => {
     },
     {
       title: 'App Developer Intern',
-      company: 'Hostwire',
+      company: 'Hostwire Pvt.Ltd',
       period: '2026',
-      location: 'Chennai, India',
+      location: 'Remote',
       type: 'Internship',
       icon: <Smartphone className="w-5 h-5" />,
       achievements: [
@@ -36,7 +36,23 @@ const Experience = () => {
         'Participated in code reviews and agile ceremonies'
       ],
       skills: ['React Native', 'JavaScript', 'Git', 'REST APIs']
-    }
+    },
+    {
+      title: 'AI Intern   ',
+      company: 'Shan AI Technologies Pvt.Ltd',
+  period: '2022',
+  location: 'Remote',
+  type: 'Internship',
+  icon: <Brain className="w-5 h-5" />,
+  achievements: [
+    'Proposed and designed VisionMate, an AI-powered assistant for visually impaired users',
+    'Developed concepts for voice-guided navigation and accessibility-focused AI solutions',
+    'Contributed ideas and research for an internal AI productivity tool',
+    'Gained hands-on experience in AI solution design, problem-solving, and user-centered development'
+  ],
+  skills: ['Artificial Intelligence', 'Python', 'Prompt Engineering', 'Research', 'Problem Solving']
+}
+      
   ]
 
   const education = [
